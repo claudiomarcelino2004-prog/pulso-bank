@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PULSO Finanças — Cartões, Empréstimos, Seguros, Crypto & Trading</title>
+<meta name="monetag" content="f88548298dea83e73741129e1902df13">
+<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="446360"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1320; --ink-soft:#16223A; --paper:#F6F3EC;
+    --gold:#C99A2E; --crimson:#A8321F; --slate:#5C6B7A;
+    --green:#1A7A4A; --line:#D8D2C4; --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+
+  .utility-bar{background:var(--ink);color:#cdd6e3;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.03em;}
+  .utility-bar .row{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:6px 20px;flex-wrap:wrap;gap:6px;}
+  .utility-bar .dot{color:var(--gold);}
+
+  header.masthead{background:var(--paper);border-bottom:3px solid var(--ink);padding:22px 20px 0;text-align:center;}
+  .masthead-inner .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.25em;color:var(--crimson);text-transform:uppercase;margin-bottom:4px;}
+  .masthead-inner h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(40px,8vw,80px);line-height:.95;letter-spacing:-.01em;}
+  .masthead-inner .tagline{font-size:14px;color:var(--slate);margin-top:6px;margin-bottom:16px;font-style:italic;font-family:'Fraunces',serif;}
+
+  nav.tabs{border-top:1px solid var(--ink);display:flex;justify-content:center;gap:0;max-width:var(--maxw);margin:0 auto;overflow-x:auto;}
+  nav.tabs a{padding:12px 20px;font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;border-right:1px solid var(--line);white-space:nowrap;transition:background .15s;}
+  nav.tabs a:last-child{border-right:none;}
+  nav.tabs a:hover,nav.tabs a.active{background:var(--ink);color:var(--paper);}
+
+  .section{max-width:var(--maxw);margin:0 auto;padding:40px 20px 10px;}
+  .section-head{display:flex;align-items:baseline;gap:14px;border-bottom:3px solid var(--ink);padding-bottom:10px;margin-bottom:26px;}
+  .section-head h2{font-family:'Fraunces',serif;font-weight:800;font-size:28px;text-transform:uppercase;}
+  .section-head .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--crimson);letter-spacing:.1em;border:1px solid var(--crimson);padding:3px 8px;border-radius:3px;}
+
+  .grid-2{display:grid;grid-template-columns:1.6fr 1fr;gap:34px;}
+  @media(max-width:820px){.grid-2{grid-template-columns:1fr;}}
+
+  .lead-story{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:22px;}
+  .lead-story h3{font-family:'Fraunces',serif;font-size:28px;font-weight:700;line-height:1.12;margin-bottom:10px;}
+  .lead-story .dek{font-size:16px;color:#33414f;margin-bottom:10px;}
+  .lead-story p{font-size:15px;color:#2c3744;margin-bottom:10px;}
+
+  .meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:flex;gap:10px;align-items:center;}
+  .meta .tag{color:var(--crimson);font-weight:700;}
+  .meta .tag.green{color:var(--green);}
+
+  .story-row{display:grid;grid-template-columns:50px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .story-row:last-child{border-bottom:none;}
+  .story-row .num{font-family:'Fraunces',serif;font-weight:800;font-size:24px;color:var(--line);line-height:1;}
+  .story-row h4{font-size:16px;font-weight:700;margin-bottom:5px;line-height:1.3;}
+  .story-row p{font-size:14px;color:#3c4856;}
+
+  .sidebar{border-left:1px solid var(--line);padding-left:28px;}
+  @media(max-width:820px){.sidebar{border-left:none;padding-left:0;border-top:3px solid var(--ink);padding-top:20px;margin-top:10px;}}
+  .sidebar h5{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson);margin-bottom:14px;}
+
+  .rank-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);}
+  .rank-item:last-child{border-bottom:none;}
+  .rank-item .rn{font-family:'Fraunces',serif;font-weight:800;color:var(--gold);font-size:18px;min-width:30px;}
+  .rank-item p{font-size:13.5px;font-weight:600;line-height:1.35;}
+  .rank-item span{font-size:12px;color:var(--slate);display:block;font-weight:400;}
+
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px;}
+  @media(max-width:900px){.card-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.card-grid{grid-template-columns:1fr;}}
+  .card{border:1px solid var(--line);background:#fffdf8;padding:18px;}
+  .card .cat{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--crimson);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+  .card h4{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin-bottom:8px;line-height:1.25;}
+  .card p{font-size:13.5px;color:#3c4856;}
+
+  .stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink);margin:26px 0 6px;border:1px solid var(--ink);}
+  @media(max-width:700px){.stat-strip{grid-template-columns:repeat(2,1fr);}}
+  .stat-cell{background:var(--paper);padding:16px;}
+  .stat-cell .num{font-family:'Fraunces',serif;font-weight:800;font-size:24px;color:var(--crimson);}
+  .stat-cell .lab{font-size:11px;color:var(--slate);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.05em;margin-top:3px;}
+
+  .pull-quote{border-left:4px solid var(--gold);padding:6px 0 6px 16px;margin:20px 0;font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--ink-soft);}
+
+  .ticker-wrap{background:var(--green);overflow:hidden;position:relative;border-bottom:3px solid var(--ink);}
+  .ticker-label{position:absolute;left:0;top:0;bottom:0;background:var(--ink);color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.15em;display:flex;align-items:center;padding:0 14px;z-index:2;}
+  .ticker-track{display:flex;white-space:nowrap;animation:scrollTicker 40s linear infinite;padding-left:160px;}
+  .ticker-track span{color:#e8fff2;font-size:13px;font-weight:500;padding:9px 24px;border-right:1px solid rgba(255,255,255,.2);font-family:'JetBrains Mono',monospace;}
+  .ticker-track span b{color:var(--gold);}
+  @keyframes scrollTicker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+  .ad-slot{max-width:var(--maxw);margin:18px auto 0;padding:0 20px;display:flex;justify-content:center;}
+
+  .tip-box{background:#fffdf3;border:1px solid var(--gold);border-left:4px solid var(--gold);padding:16px 18px;margin:20px 0;font-size:14px;}
+  .tip-box b{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+
+  .whats-float{position:fixed;bottom:20px;right:20px;z-index:50;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.28);transition:transform .15s;}
+  .whats-float:hover{transform:scale(1.07);}
+  .whats-float svg{width:28px;height:28px;fill:#fff;}
+
+  footer{background:var(--ink);color:#aeb9c8;margin-top:60px;padding:36px 20px 22px;}
+  footer .inner{max-width:var(--maxw);margin:0 auto;}
+  footer h6{font-family:'Fraunces',serif;color:#fff;font-size:20px;margin-bottom:8px;}
+  footer .cols{display:flex;gap:46px;flex-wrap:wrap;margin:20px 0;}
+  footer .cols div{font-size:12.5px;}
+  footer .cols b{display:block;color:#fff;margin-bottom:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;}
+  footer .legal{border-top:1px solid #2a3754;padding-top:16px;font-size:11px;color:#6f7d92;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="row">
+    <span><span class="dot">●</span> TERÇA, 1 DE JULHO DE 2026 — MAPUTO</span>
+    <span>BTC $107.420 <span class="dot">·</span> ETH $3.812 <span class="dot">·</span> USD/MZN 63,80 <span class="dot">·</span> EUR/MZN 69,40</span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="kicker">Edição Finanças</div>
+    <h1>PULSO</h1>
+    <p class="tagline">Dinheiro, Mercados & Decisões Inteligentes</p>
+  </div>
+  <nav class="tabs">
+    <a href="index.html">Início</a>
+    <a href="#cartoes">Cartões & Banco</a>
+    <a href="#emprestimos">Empréstimos</a>
+    <a href="#seguros">Seguros</a>
+    <a href="#crypto">Crypto & Trading</a>
+    <a href="#investimento">Investimento</a>
+  </nav>
+</header>
+
+<!-- TICKER MERCADOS -->
+<div class="ticker-wrap">
+  <div class="ticker-label">MERCADOS</div>
+  <div class="ticker-track">
+    <span>BTC <b>$107.420</b> ▲2,3%</span>
+    <span>ETH <b>$3.812</b> ▲1,8%</span>
+    <span>XRP <b>$0,61</b> ▼0,5%</span>
+    <span>OURO <b>$3.290/oz</b> ▲0,4%</span>
+    <span>S&P 500 <b>5.912</b> ▲0,7%</span>
+    <span>NASDAQ <b>19.340</b> ▲1,1%</span>
+    <span>PETRÓLEO <b>$76,40/bbl</b> ▼1,2%</span>
+    <span>USD/MZN <b>63,80</b></span>
+    <span>EUR/MZN <b>69,40</b></span>
+    <span>BTC <b>$107.420</b> ▲2,3%</span>
+    <span>ETH <b>$3.812</b> ▲1,8%</span>
+    <span>XRP <b>$0,61</b> ▼0,5%</span>
+    <span>OURO <b>$3.290/oz</b> ▲0,4%</span>
+    <span>S&P 500 <b>5.912</b> ▲0,7%</span>
+    <span>NASDAQ <b>19.340</b> ▲1,1%</span>
+    <span>PETRÓLEO <b>$76,40/bbl</b> ▼1,2%</span>
+    <span>USD/MZN <b>63,80</b></span>
+    <span>EUR/MZN <b>69,40</b></span>
+  </div>
+</div>
+
+<!-- BANNER AD -->
+<div class="ad-slot"><div data-banner-id="1495160"></div></div>
+
+<!-- ===== CARTÕES & BANCO ===== -->
+<section class="section" id="cartoes">
+  <div class="section-head">
+    <h2>Cartões & Banco</h2>
+    <span class="eyebrow">GUIA PRÁTICO</span>
+  </div>
+  <div class="grid-2">
+    <div>
+      <div class="lead-story">
+        <div class="meta"><span class="tag">DESTAQUE</span> Cartões de Crédito · 2026</div>
+        <h3>Como escolher o melhor cartão de crédito sem cair nas armadilhas das taxas</h3>
+        <p class="dek">Com cada vez mais bancos a oferecerem cartões com cashback, milhas e benefícios exclusivos, a escolha certa pode valer centenas de meticais por ano.</p>
+        <p>O mercado de cartões de crédito em Moçambique tem crescido, com instituições como o BCI, Millennium BIM e Standard Bank a competirem com benefícios cada vez mais atrativos. Mas antes de pedir um cartão, há três números que precisas de entender: a taxa de juro anual (TAN), a comissão de manutenção e o período de carência antes de os juros começarem a acumular.</p>
+        <p>Os cartões com cashback — que devolvem uma percentagem de cada compra — são ideais para quem paga a fatura completa todos os meses. Quem costuma deixar saldo pendente deve priorizar a taxa de juro mais baixa, mesmo que isso signifique abrir mão dos benefícios.</p>
+      </div>
+
+      <div class="story-row">
+        <div class="num">01</div>
+        <div>
+          <h4>Banca digital cresce 40% em Moçambique em 2026</h4>
+          <p>O número de contas bancárias geridas exclusivamente via app ou internet banking subiu significativamente, impulsionado pela expansão da cobertura 4G e pelo crescimento da classe média urbana em Maputo e Beira.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="num">02</div>
+        <div>
+          <h4>M-Pesa vs conta bancária tradicional: qual convém mais?</h4>
+          <p>Para transações do dia a dia e pequenos negócios, o M-Pesa mantém vantagem pela cobertura e simplicidade. Mas para guardar poupanças e aceder a crédito formal, a conta bancária continua a ser insubstituível — especialmente com as novas funcionalidades digitais dos bancos locais.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="num">03</div>
+        <div>
+          <h4>5 erros que custam caro no uso do cartão de débito</h4>
+          <p>Desde não ativar alertas de movimentos até usar o cartão em caixas multibanco de terceiros sem verificar as comissões — os erros mais comuns no uso do cartão de débito podem resultar em perdas silenciosas de dezenas a centenas de meticais por mês.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="num">04</div>
+        <div>
+          <h4>Como abrir conta bancária sem sair de casa em 2026</h4>
+          <p>Vários bancos moçambicanos já permitem a abertura de conta 100% online, com verificação de identidade por selfie e documento digital. O processo leva menos de 10 minutos e a conta fica ativa no mesmo dia.</p>
+        </div>
+      </div>
+    </div>
+    <aside class="sidebar">
+      <h5>Comparação de Cartões</h5>
+      <div class="rank-item"><span class="rn">★</span><div><p>BCI Visa Classic</p><span>Cashback 0,5% · Anuidade 450 MZN</span></div></div>
+      <div class="rank-item"><span class="rn">★</span><div><p>BIM Mastercard Gold</p><span>Milhas aéreas · Anuidade 850 MZN</span></div></div>
+      <div class="rank-item"><span class="rn">★</span><div><p>Standard Bank Platinum</p><span>Seguro de viagem incluído · Anuidade 1.200 MZN</span></div></div>
+      <div class="rank-item"><span class="rn">★</span><div><p>Absa Visa Débito</p><span>Sem anuidade · Aceite internacionalmente</span></div></div>
+
+      <div class="tip-box" style="margin-top:20px;">
+        <b>💡 Dica PULSO</b>
+        Pede sempre o extrato do cartão antes de assinar o contrato. As comissões escondidas (levantamento, conversão de moeda, SMS) podem duplicar o custo real do cartão.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- AD SLOT ENTRE SECÇÕES -->
+<div class="ad-slot"><div data-banner-id="1495160"></div></div>
+
+<!-- ===== EMPRÉSTIMOS ===== -->
+<section class="section" id="emprestimos">
+  <div class="section-head">
+    <h2>Empréstimos</h2>
+    <span class="eyebrow">CRÉDITO INTELIGENTE</span>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-cell"><div class="num">18–35%</div><div class="lab">Taxa de juro anual típica em Moçambique</div></div>
+    <div class="stat-cell"><div class="num">3–60</div><div class="lab">Meses de prazo nos empréstimos pessoais</div></div>
+    <div class="stat-cell"><div class="num">3x</div><div class="lab">Rendimento mínimo para acesso a crédito pessoal</div></div>
+    <div class="stat-cell"><div class="num">72h</div><div class="lab">Tempo médio de aprovação de crédito digital</div></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="cat">Crédito Pessoal</div>
+      <h4>Como pedir um empréstimo pessoal e pagar menos juros</h4>
+      <p>Comparar as taxas de três bancos diferentes antes de assinar pode poupar até 30% no custo total do empréstimo. A TAEG (Taxa Anual de Encargos Efetiva Global) é o número certo a comparar — inclui todos os custos, não só os juros.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Crédito Habitação</div>
+      <h4>Crédito imobiliário: o que o banco não te conta antes de assinar</h4>
+      <p>Custos de escritura, avaliação do imóvel, seguro de vida obrigatório e comissão de abertura de processo podem somar 3 a 5% do valor do imóvel — valores que raramente aparecem no simulador online do banco.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Microcrédito</div>
+      <h4>Microcrédito para negócios: as melhores opções em Moçambique</h4>
+      <p>Instituições como a SOCREMO, FNB e programas do IGEPE têm linhas de microcrédito específicas para pequenos negócios e agricultores, com taxas mais favoráveis do que o crédito pessoal convencional.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Dívida</div>
+      <h4>Como sair das dívidas em 2026: o método que realmente funciona</h4>
+      <p>O método "avalanche" — pagar primeiro a dívida com a maior taxa de juro — é matematicamente mais eficiente. O método "bola de neve" — começar pela menor dívida — funciona melhor psicologicamente para quem precisa de motivação rápida.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Score de Crédito</div>
+      <h4>O que é o score de crédito e como melhorar o teu em 90 dias</h4>
+      <p>Em Moçambique, o Mapa de Responsabilidades de Crédito do Banco de Moçambique regista o teu histórico de pagamentos. Pagar em dia, reduzir o uso do limite do cartão e evitar múltiplos pedidos de crédito simultâneos são os três passos mais eficazes.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Empréstimo Online</div>
+      <h4>Empréstimos rápidos via app: vantagens e riscos que precisas de conhecer</h4>
+      <p>Apps de crédito instantâneo aprovam em minutos mas cobram taxas muito acima da média bancária. São úteis em emergências, mas nunca devem ser usados para despesas regulares — o custo anualizado pode ultrapassar os 100%.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AD SLOT -->
+<div class="ad-slot"><div data-banner-id="1495160"></div></div>
+
+<!-- ===== SEGUROS ===== -->
+<section class="section" id="seguros">
+  <div class="section-head">
+    <h2>Seguros</h2>
+    <span class="eyebrow">PROTEÇÃO & TRANQUILIDADE</span>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <div class="lead-story">
+        <div class="meta"><span class="tag green">VIDA</span> Seguro de Vida · Guia 2026</div>
+        <h3>Seguro de vida: quanto precisas mesmo de gastar para estar bem protegido?</h3>
+        <p class="dek">A regra dos 10x o rendimento anual é um ponto de partida, mas a realidade moçambicana pede uma análise mais cuidadosa.</p>
+        <p>Um seguro de vida adequado deve cobrir pelo menos 5 a 10 anos do teu rendimento anual, mais as dívidas existentes (crédito habitação, empréstimos pessoais) e os custos de educação dos filhos até à independência. Em Moçambique, seguradoras como a Mozambique Life, EMOSE e GA Insurance oferecem apólices com prémios mensais a partir de 300 MZN para capitais seguros de 500.000 MZN.</p>
+        <p>Os seguros associados a empréstimos bancários (obrigatórios na maioria dos créditos habitação) podem ser renegociados com a seguradora da tua escolha, em vez de ficares ligado à do banco — uma poupança que pode chegar a 40% no prémio anual.</p>
+      </div>
+
+      <div class="story-row">
+        <div class="num">01</div>
+        <div>
+          <h4>Seguro automóvel obrigatório vs. seguro completo: a diferença vale o preço?</h4>
+          <p>O seguro de responsabilidade civil (obrigatório por lei em Moçambique) cobre apenas os danos causados a terceiros. Para um carro com valor acima de 500.000 MZN, o seguro completo com cobertura de colisão, roubo e fenómenos naturais costuma compensar — o prémio adicional raramente excede 3% do valor do veículo por ano.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="num">02</div>
+        <div>
+          <h4>Seguro de saúde privado: quando vale a pena contratar?</h4>
+          <p>Com a saúde pública a enfrentar pressão crescente, o seguro de saúde privado tornou-se cada vez mais popular entre trabalhadores por conta própria e profissionais liberais. Planos básicos com cobertura ambulatória começam nos 600 MZN/mês por adulto.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="num">03</div>
+        <div>
+          <h4>3 erros ao contratar um seguro que custam caro no sinistro</h4>
+          <p>Não declarar pré-existências, subvalorizar o bem segurado e não ler as exclusões da apólice são os três erros mais comuns — e os que mais frequentemente levam a indemnizações negadas ou reduzidas na hora em que mais precisas.</p>
+        </div>
+      </div>
+    </div>
+    <aside class="sidebar">
+      <h5>Tipos de Seguro Essenciais</h5>
+      <div class="rank-item"><span class="rn">1</span><div><p>Seguro de Vida</p><span>Proteção da família em caso de falecimento ou invalidez</span></div></div>
+      <div class="rank-item"><span class="rn">2</span><div><p>Seguro Automóvel</p><span>Obrigatório por lei — responsabilidade civil mínima</span></div></div>
+      <div class="rank-item"><span class="rn">3</span><div><p>Seguro de Saúde</p><span>Cobre consultas, análises e internamento privado</span></div></div>
+      <div class="rank-item"><span class="rn">4</span><div><p>Seguro Multirriscos Habitação</p><span>Protege o imóvel e recheio contra incêndio, roubo e catástrofes</span></div></div>
+      <div class="rank-item"><span class="rn">5</span><div><p>Seguro de Acidentes Pessoais</p><span>Cobre despesas e rendimento em caso de acidente</span></div></div>
+
+      <div class="pull-quote" style="margin-top:16px;">
+        "O melhor seguro é aquele que nunca precisas de usar — mas que está lá quando tudo corre mal."
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- AD SLOT -->
+<div class="ad-slot"><div data-banner-id="1495160"></div></div>
+
+<!-- ===== CRYPTO & TRADING ===== -->
+<section class="section" id="crypto">
+  <div class="section-head">
+    <h2>Crypto & Trading</h2>
+    <span class="eyebrow">MERCADOS DIGITAIS</span>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-cell"><div class="num">$107K</div><div class="lab">Bitcoin (BTC) · hoje</div></div>
+    <div class="stat-cell"><div class="num">$3.812</div><div class="lab">Ethereum (ETH) · hoje</div></div>
+    <div class="stat-cell"><div class="num">$3,2T</div><div class="lab">Capitalização total do mercado cripto</div></div>
+    <div class="stat-cell"><div class="num">62%</div><div class="lab">Dominância do Bitcoin no mercado</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <div class="lead-story">
+        <div class="meta"><span class="tag">ANÁLISE</span> Bitcoin · Julho 2026</div>
+        <h3>Bitcoin a caminho dos $120.000? O que os analistas dizem sobre o segundo semestre</h3>
+        <p class="dek">Após a aprovação dos ETFs de Bitcoin nos EUA e a entrada de grandes fundos institucionais, os analistas dividem-se entre otimismo moderado e alerta para volatilidade.</p>
+        <p>O Bitcoin ultrapassou os $100.000 pela primeira vez no final de 2024 e mantém-se acima dessa barreira em 2026, impulsionado pela adoção institucional crescente e pelo halving de abril de 2024, que reduziu a emissão de novas moedas. O S&P Bitcoin ETF da BlackRock ultrapassou os $40 mil milhões em ativos sob gestão, consolidando a criptomoeda como classe de ativo reconhecida.</p>
+        <p>Os riscos continuam: a regulação nos EUA e na Europa ainda está em definição, a volatilidade é estrutural, e os ciclos de mercado cripto têm historicamente incluído correções de 50-80% mesmo em bull markets. Para investidores de Moçambique, o acesso é possível via plataformas como Binance, Coinbase ou exchanges locais, mas requer pesquisa e gestão de risco rigorosa.</p>
+      </div>
+
+      <div class="story-row">
+        <div class="num">01</div>
+        <div>
+          <h4>Ethereum 2.0 e os novos casos de uso que estão a transformar as finanças</h4>
+          <p>As finanças descentralizadas (DeFi) construídas sobre a rede Ethereum já movimentam mais de $80 mil milhões em ativos bloqueados, oferecendo alternativas a empréstimos, poupanças e seguros sem a necessidade de um banco intermediário.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="num">02</div>
+        <div>
+          <h4>Como começar a investir em cripto com 1.000 MZN por mês</h4>
+          <p>A estratégia de DCA (Dollar-Cost Averaging) — investir uma quantia fixa regularmente, independentemente do preço — é a abordagem mais recomendada para iniciantes, pois elimina o risco de entrar no pior momento do mercado.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="num">03</div>
+        <div>
+          <h4>Stablecoins como USDT e USDC: a forma mais simples de guardar dólares em África</h4>
+          <p>Para quem vive num país com moeda volátil, as stablecoins atreladas ao dólar permitem guardar poupanças em USD sem precisar de conta bancária no estrangeiro — uma alternativa crescentemente popular em Moçambique, Nigéria e Quénia.</p>
+        </div>
+      </div>
+      <div class="story-row">
+        <div class="num">04</div>
+        <div>
+          <h4>Os 5 maiores erros dos iniciantes no trading de cripto</h4>
+          <p>Investir mais do que se pode perder, fazer trading emocional em quedas, deixar moedas em exchanges centralizadas sem carteira própria, ignorar a fiscalidade e não ter plano de saída são os erros que mais frequentemente destroem o capital dos novatos no mercado cripto.</p>
+        </div>
+      </div>
+    </div>
+    <aside class="sidebar">
+      <h5>Cotações ao Vivo</h5>
+      <div class="rank-item"><span class="rn">₿</span><div><p>Bitcoin (BTC)</p><span>$107.420 · ▲2,3% hoje</span></div></div>
+      <div class="rank-item"><span class="rn">Ξ</span><div><p>Ethereum (ETH)</p><span>$3.812 · ▲1,8% hoje</span></div></div>
+      <div class="rank-item"><span class="rn">◎</span><div><p>Solana (SOL)</p><span>$182,40 · ▲3,1% hoje</span></div></div>
+      <div class="rank-item"><span class="rn">✕</span><div><p>XRP</p><span>$0,61 · ▼0,5% hoje</span></div></div>
+      <div class="rank-item"><span class="rn">◈</span><div><p>BNB</p><span>$618 · ▲0,9% hoje</span></div></div>
+      <div class="rank-item"><span class="rn">$</span><div><p>USDT (Tether)</p><span>$1,00 · Stablecoin</span></div></div>
+
+      <div class="tip-box" style="margin-top:16px;">
+        <b>⚠️ Aviso de Risco</b>
+        Investir em criptomoedas envolve risco elevado de perda do capital. Nunca invistas dinheiro que não possas perder. Consulta um especialista financeiro antes de decidir.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- AD SLOT -->
+<div class="ad-slot"><div data-banner-id="1495160"></div></div>
+
+<!-- ===== INVESTIMENTO ===== -->
+<section class="section" id="investimento">
+  <div class="section-head">
+    <h2>Investimento</h2>
+    <span class="eyebrow">FAZ O DINHEIRO TRABALHAR</span>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="cat">Bolsa de Valores</div>
+      <h4>Bolsa de Valores de Moçambique: como investir e o que esperar em 2026</h4>
+      <p>A BVM (Bolsa de Valores de Moçambique) oferece acesso a ações de empresas locais, obrigações do Estado e fundos. É um mercado ainda em desenvolvimento, mas com potencial de crescimento à medida que mais empresas optam por abrir capital.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Fundos de Investimento</div>
+      <h4>Fundos de investimento: a forma mais diversificada de entrar nos mercados com pouco capital</h4>
+      <p>Um fundo de investimento agrega o capital de muitos investidores e aplica-o em carteiras diversificadas geridas por profissionais. Permitem acesso a mercados internacionais — ações, obrigações, imobiliário — com investimentos mínimos a partir de valores acessíveis.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Poupança</div>
+      <h4>Depósito a prazo vs. conta poupança: onde o teu dinheiro rende mais?</h4>
+      <p>Os depósitos a prazo fixo em bancos moçambicanos oferecem taxas entre 4% e 9% ao ano, dependendo do prazo e do montante. Acima de 90 dias, as taxas sobem significativamente — vale a pena comparar antes de imobilizar o dinheiro.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Imobiliário</div>
+      <h4>Investir em imóveis em Moçambique: onde estão as oportunidades reais em 2026</h4>
+      <p>Maputo, Matola e Beira continuam a ser os mercados mais ativos. O arrendamento comercial em zonas industriais da Matola tem gerado retornos anuais de 8–12%, superiores à maioria dos produtos financeiros disponíveis localmente.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Ouro & Commodities</div>
+      <h4>Ouro a $3.290/oz: ainda faz sentido como proteção de carteira em 2026?</h4>
+      <p>Com a inflação global a estabilizar e o dólar a mostrar sinais de fraqueza, o ouro mantém o papel histórico de reserva de valor. Para carteiras moçambicanas, pode ser acedido via ETFs de ouro em plataformas internacionais, sem necessidade de guardar o metal físico.</p>
+    </div>
+    <div class="card">
+      <div class="cat">Pensão & Reforma</div>
+      <h4>Reforma em Moçambique: porque não podes depender só do INSS</h4>
+      <p>A pensão do INSS representa em média apenas 40–60% do último salário ativo. A criação de um fundo de reforma complementar — mesmo começando com 500 MZN/mês aos 30 anos — pode fazer a diferença entre conforto e dificuldade financeira após os 60 anos.</p>
+    </div>
+  </div>
+
+  <div class="pull-quote" style="margin-top:30px;">
+    A regra de ouro das finanças pessoais permanece simples: gasta menos do que ganhas, investe a diferença com regularidade, e dá tempo ao tempo para fazer o seu trabalho.
+  </div>
+</section>
+
+<!-- AD SLOT FINAL -->
+<div class="ad-slot"><div data-banner-id="1495160"></div></div>
+
+<a class="whats-float" href="https://chat.whatsapp.com/CnFSqrRhOJA9Itsb81njzB" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.46L3 21l3.65-1.27a8.9 8.9 0 0 0 4.4 1.18h.01a8.94 8.94 0 0 0 6.55-15ZM12.06 19.4a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.81.97.94-2.73-.18-.28a7.43 7.43 0 0 1 11.6-9.2 7.36 7.36 0 0 1 2.18 5.25 7.43 7.43 0 0 1-7.68 7.19Zm4.07-5.56c-.22-.11-1.31-.65-1.52-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05-1.31-.65-2.17-1.16-3.04-2.63-.23-.4.23-.37.66-1.23.07-.15.04-.27-.03-.39-.07-.11-.6-1.45-.82-1.98-.22-.52-.44-.45-.6-.46-.15-.01-.33-.01-.5-.01-.18 0-.46.07-.7.34-.24.27-.92.9-.92 2.2 0 1.3.95 2.55 1.08 2.73.13.18 1.83 2.79 4.45 3.8 2.2.84 2.65.67 3.13.63.48-.05 1.31-.53 1.5-1.05.18-.51.18-.95.13-1.05-.06-.1-.22-.16-.44-.27Z"/></svg>
+</a>
+
+<footer>
+  <div class="inner">
+    <h6>PULSO Finanças</h6>
+    <p style="font-size:13px;max-width:520px;">Informação financeira clara e acessível para moçambicanos que querem tomar melhores decisões com o seu dinheiro.</p>
+    <div class="cols">
+      <div><b>Secções</b>Cartões & Banco<br>Empréstimos<br>Seguros<br>Crypto & Trading<br>Investimento</div>
+      <div><b>PULSO</b><a href="index.html" style="color:#aeb9c8;">Início</a><br><a href="sobre.html" style="color:#aeb9c8;">Sobre Nós</a><br><a href="contato.html" style="color:#aeb9c8;">Contacto</a></div>
+      <div><b>Legal</b><a href="politica-privacidade.html" style="color:#aeb9c8;">Privacidade</a></div>
+    </div>
+    <div class="legal">
+      © 2026 PULSO. O conteúdo desta página tem fins exclusivamente informativos e não constitui aconselhamento financeiro, fiscal ou de investimento. Os valores de mercado apresentados são indicativos e podem não refletir os preços em tempo real. Consulta sempre um especialista antes de tomar decisões financeiras. Investir envolve risco de perda de capital.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
