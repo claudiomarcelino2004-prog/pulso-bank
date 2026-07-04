@@ -1,2 +1,0 @@
-# pulso-bank
-Notícias
